@@ -1,4 +1,39 @@
+body {
+	background-color: lightblue;
+}
+
+.header {
+	background-color: darkblue;
+	text-align: center;
+	height: 45px;
+	width: 300px;
+	color: white;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+.instructions {
+	background-color: white;
+	width: 500px;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	padding: 10px;
+}
+
+.score {
+	background-color: white;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	margin: 10px;
+	width: 200px;
+}
+
+.bottomScore {
+	background-color: white;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	margin: 10px;
+	width: 200px;
+}
+
 .crystal {
 	height: 50px;
 	width: 50px;
+	padding: 10px;
 }
