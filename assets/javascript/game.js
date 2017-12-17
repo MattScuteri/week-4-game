@@ -1,46 +1,40 @@
 $(document).ready(function() {
 	
-	let randomNumber;
-	let crystal1;
-	let crystal2;
-	let crystal3;
-	let crystal4;
+	let randomNumber = Math.floor(Math.random() +102) + 19;
+	let totalScore = 0;
+	let wins = 0;
+	let losses = 0;
 
-	function beginGame() {
-		randomNumber = Math.floor(Math.random() * 102) + 19;
-		crystal1 = Math.floor(Math.random() * 10) + 1;
-		crystal2 = Math.floor(Math.random() * 10) + 1;
-		crystal3 = Math.floor(Math.random() * 10) + 1;
-		crystal4 = Math.floor(Math.random() * 10) + 1;
-		totalScore = 0;
+	for (let i = 0; i < 4; i++) {
+		let crystalValues = Math.floor(Math.random() * 10) + 1;
+		console.log(crystalValues);
+
+		let crystal = $("<img>");
+		crystal.attr({
+			"class" : 'crystal',
+			"data-crystalvalue" : crystalValues
+		});
+
+		$(".crystals").append(crystal);
+
+		crystal.attr({"src": "assets/images/crystal1.jpg",
+			"src": "assets/images/crystal2.jpg",
+			"src": "assets/images/crystal3.png",
+			"src": "assets/images/crystal4.jpg"
+		});
 	};
 
-	beginGame();	
+	$(".crystal").on("click", function() { 
+		
+		let crystalResult = parseInt(($(this).attr('data-crystalvalue')));
 
-	$("#crystal1").on("click", function() {
-		parseInt(crystal1);
-		totalScore = crystal1 + totalScore;
-	});
+		totalScore += crystalResult
 
-	$("#crystal2").on("click", function() {
-		totalScore = crystal2 + totalScore
-	});	
+		$("#totalScore").html(totalScore);
 
-	$("#crystal3").on("click", function() {
-		totalScore = crystal3 + totalScore
-	});	
-
-	$("#crystal4").on("click", function() {
-		totalScore = crystal4 + totalScore
-	});
+		console.log(totalScore);
+		});
 
 	$("#randomNumber").html(randomNumber);
-
-	$("#totalScore").html(totalScore);
-
-	console.log(crystal1)
-	console.log(crystal2)
-	console.log(crystal3)
-	console.log(crystal4)
 
 });
